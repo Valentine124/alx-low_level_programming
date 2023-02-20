@@ -11,7 +11,7 @@ int main(void)
 
 	for (n = 0; n <= 9; n++)
 	{
-		putchar(40 + n);
+		putchar(48 + n);
 		/* add , using ASCII code */
 		putchar(44);
 		/* add space using ASCII code */
