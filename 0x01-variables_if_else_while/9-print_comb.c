@@ -12,10 +12,13 @@ int main(void)
 	for (n = 0; n <= 9; n++)
 	{
 		putchar(48 + n);
-		/* add , using ASCII code */
-		putchar(44);
-		/* add space using ASCII code */
-		putchar(32);
+		if (n != 9)
+		{
+			/* add comma using ASCII code */
+			putchar(44);
+			/* add space using ASCII code */
+			putchar(32);
+		}
 	}
 	return (0);
 }
