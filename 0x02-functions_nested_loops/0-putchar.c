@@ -7,11 +7,12 @@
  */
 int main(void)
 {
-	char c[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
+	char *c = "_putchar";
 
-	for (int i = 0; i < 8; i++)
+	while(*c)
 	{
-		_putchar(c[i]);
+		_putchar(*c);
+		c++;
 	}
 	_putchar('\n');
 
