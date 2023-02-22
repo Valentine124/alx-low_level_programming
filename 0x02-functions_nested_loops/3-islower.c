@@ -7,15 +7,9 @@
  */
 int _islower(int c)
 {
-	int n;
-
-	for (n = 97; c <= 122; n++)
+	if (islower(c) != 0)
 	{
-		if (c == n)
-		{
-			return (1);
-		}
+		return (1);
 	}
-
 	return (0);
 }
