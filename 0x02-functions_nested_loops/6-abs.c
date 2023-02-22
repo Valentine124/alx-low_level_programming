@@ -3,7 +3,7 @@
 
 /**
  * _abs - give input absolut value
- * @: the value in int
+ * @ab: the value in int
  * Return: absolute value of input
  */
 int _abs(int ab)
