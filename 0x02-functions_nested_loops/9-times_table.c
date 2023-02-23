@@ -5,11 +5,14 @@
  */
 void times_table(void)
 {
-	for (int f = 0; f <= 9; f++)
+	int f;
+	int s;
+
+	for (f = 0; f <= 9; f++)
 	{
 		_putchar('0');
 
-		for (int s = 1; s <= 9; s++)
+		for (s = 1; s <= 9; s++)
 		{
 			int prod;
 
