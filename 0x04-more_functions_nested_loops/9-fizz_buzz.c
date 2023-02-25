@@ -8,19 +8,16 @@ void fizz_buzz(void)
 {
 	int n;
 
-	char fizz[] = "Fizz";
-	char buzz[] = "Buzz";
-
 	for (n = 1; n <= 100; n++)
 	{
 		if ((n % 3) == 0)
-			printf("%s ", fizz);
+			printf("Fizz");
 
 		if ((n % 5) == 0)
-			printf("%s ", buzz);
+			printf("Buzz");
 
 		if ((n % 3) == 0 && (n % 5) == 0)
-			printf("%s%s ", fizz, buzz);
+			printf("FizzBuzz");
 
 		printf("%d ", n);
 	}
