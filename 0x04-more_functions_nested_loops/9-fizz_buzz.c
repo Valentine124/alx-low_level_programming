@@ -7,11 +7,9 @@
 void fizz_buzz(void)
 {
 	int n;
-	char fizz[];
-	char buzz[];
 
-	fizz = "Fizz";
-	buzz = "Buzz";
+	char fizz[] = "Fizz";
+	char buzz[] = "Buzz";
 
 	for (n = 1; n <= 100; n++)
 	{
