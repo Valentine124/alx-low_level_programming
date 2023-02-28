@@ -9,9 +9,10 @@
 void puts2(char *str)
 {
 	int i, len;
-	char ch[strlen(str)];
+	char *ch;
 
 	len = strlen(str);
+	ch[0] = '0'
 
 	for (i = 0; i <= len - 1; i += 2)
 	{
