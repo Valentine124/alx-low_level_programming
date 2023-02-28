@@ -13,7 +13,7 @@ void puts2(char *str)
 
 	len = strlen(str);
 
-	for (i = 0; i <= len - 1; i+2)
+	for (i = 0; i <= len - 1; i += 2)
 	{
 		ch[i] = str[i];
 	}
