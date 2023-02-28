@@ -12,12 +12,9 @@ void puts2(char *str)
 	char *ch;
 
 	len = strlen(str);
-	ch[0] = '0';
 
 	for (i = 0; i <= len - 1; i += 2)
 	{
-		ch[i] = str[i];
+		printf("%c", s[i]);
 	}
-
-	puts(ch);
 }
