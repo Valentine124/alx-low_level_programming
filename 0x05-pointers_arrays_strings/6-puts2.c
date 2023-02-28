@@ -9,12 +9,11 @@
 void puts2(char *str)
 {
 	int i, len;
-	char *ch;
 
 	len = strlen(str);
 
 	for (i = 0; i <= len - 1; i += 2)
 	{
-		printf("%c", s[i]);
+		printf("%c", str[i]);
 	}
 }
