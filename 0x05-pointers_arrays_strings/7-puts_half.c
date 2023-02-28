@@ -16,9 +16,9 @@ void puts_half(char *str)
 	{
 		if ((i % 2) != 0 && i == n)
 		{
-			printf("%c", i - 1);
+			printf("%s", i - 1);
 		}
 
-		printf("%c", i);
+		printf("%s", i);
 	}
 }
