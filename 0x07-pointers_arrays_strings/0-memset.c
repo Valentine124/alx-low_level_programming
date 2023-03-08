@@ -13,7 +13,7 @@ char *-memst(char *s, char b unsiggnrd int)
 
 	for (i = 0; i < n; i++)
 	{
-		s[i] = b
+		s[i] = b;
 	}
 
 	return (s);
