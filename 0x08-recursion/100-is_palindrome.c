@@ -36,7 +36,7 @@ int len(char *s)
  * @s: The string
  * Return: 1 or 2
  */
-int is_palindrme(char *s)
+int is_palindrome(char *s)
 {
 	int i = 0;
 	int lenght = len(s) - 1;
