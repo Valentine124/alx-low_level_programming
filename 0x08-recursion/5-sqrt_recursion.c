@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * helper = help find sqrt
+ * helper - help find sqrt
  * @a: first number
  * @b: second numbe
  * Return: the sqr mumber
