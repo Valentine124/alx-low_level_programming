@@ -12,7 +12,7 @@ int checker(char *str, int len, int i)
 	if (i < len && str[i] == str[len])
 		return (checker(str, len - 1, i + 1));
 	if (str[i] != str[len])
-		retun (0);
+		return (0);
 	return (1);
 }
 
@@ -41,5 +41,5 @@ int is_palindrme(char *s)
 	int i = 0;
 	int lenght = len(s) - 1;
 
-	reurn (checker(s,lenght, i));
+	return (checker(s,lenght, i));
 }
