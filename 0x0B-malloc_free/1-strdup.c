@@ -19,13 +19,16 @@ char *_strdup(char *str)
 	while (str[c++])
 		len++;
 
-	s = malloc(sizeof(str));
+	s = malloc(sizeof(char) * (len + 1);
 
 	if (s == NULL)
 		return (NULL);
 
 	for (i = 0; i <= len - 1; i++)
 		s[i] = str[i];
+
+
+	s[i + 1] = 0;
 
 	return (s);
 }
