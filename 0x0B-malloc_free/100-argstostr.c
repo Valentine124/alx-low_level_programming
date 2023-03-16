@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -13,20 +14,25 @@
 char *argstostr(int ac, char **av)
 {
 	char *str;
-	int i;
+	int i, len, pos = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	str = malloc(sizeof(char) * (ac * 2));
+	for (i = 0; i < ac; i++)
+		len += strlen(av[i]) + 1;
+
+	str = malloc(sizeof(char) * len);
 
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i += 2)
+	for (i = 0; i < ac; i++)
 	{
-		str[i] = av[i];
-		str[i + 1] = '\n';
+		strcpy(str[i + pos], av[i]);
+		pos += strlen(av[i]);
+		str[i + pos] = '\n';
+		pos++;
 	}
 
 	return (str);
