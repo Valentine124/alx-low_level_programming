@@ -18,13 +18,13 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 		s1 = "";
-	if(s2 == NULL)
+	if (s2 == NULL)
 		s2 = "";
 
 	while (s1[c1++])
 		lens1++;
 
-	while(s2[c2++])
+	while (s2[c2++])
 		lens2++;
 
 	s3 = malloc(sizeof(char) * ((lens1 + lens2) + 1));
@@ -34,7 +34,8 @@ char *str_concat(char *s1, char *s2)
 		if (ci < lens1)
 			s3[ci] = s1[ci];
 
-		s3[ci] = s2[ci];
+		if (ci < lens2)
+			s3[ci] = s2[ci];
 	}
 
 	return (s3);
