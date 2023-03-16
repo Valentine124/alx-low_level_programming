@@ -27,18 +27,14 @@ char *str_concat(char *s1, char *s2)
 	while(s2[c2++])
 		lens2++;
 
-	s3 = malloc(sizeof(char) * ((lens1 + lens2) + 3));
+	s3 = malloc(sizeof(char) * ((lens1 + lens2) + 1));
 
-	for (ci = 0; ci < lens1; ci++)
+	for (ci = 0; ci < (lens1 + lens2); ci++)
 	{
-		i += ci;
-		s3[i] = s1[i];
-	}
+		if (ci < lens1)
+			s3[ci] = s1[ci];
 
-	for (cj = 0; cj < lens2; cj++)
-	{
-		i += cj + 1;
-		s3[i] = s2[cj];
+		s3[ci] = s2[ci];
 	}
 
 	s3[(lens1 + lens2) - 1] = '\0';
