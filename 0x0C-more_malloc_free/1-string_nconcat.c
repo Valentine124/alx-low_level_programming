@@ -29,7 +29,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[c2++])
 		lens2++;
 
-	if (n < lens2)
+	if (n < (unsigned int)lens2)
 		lens2 = n;
 
 	s3 = malloc(sizeof(char) * (lens1 + lens2) + 1);
@@ -41,7 +41,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s3[i] = s1[i];
 
 	for (j = 0; j < lens2; j++)
-		s3[lens1 + j] = s2[i];
+		s3[lens1 + j] = s2[j];
+
+	s3[lens1 + lens2] = '\0';
 
 	return (s3);
 
