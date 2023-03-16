@@ -1,0 +1,57 @@
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * string_nconcat - join two strings
+ *
+ * @s1: first string
+ *
+ * @s2: second string
+ *
+ * @n: byte of `s2` to use
+ *
+ * Return: pointer to new memory or `NULL`
+ */
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	char *s3;
+	int lens1 = 0, lens2 = 0;
+	int i, c1 = 0, c2 = 0;
+
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[c1++])
+		lens1++;
+
+	while (s2[c2++])
+		lens2++;
+
+	if (n >= lens2)
+		s3 = malloc(sizeof(char) * (lens1 + lens2) + 1);
+	else
+		s3 = malloc(sizeof(char) * (lens1 + n) + 1);
+
+	if (s3 == NULL)
+		return NULL;
+
+	for (i = 0; i < lens1; i++)
+		s3[i] = s1[i];
+
+	if (n >= s2)
+	{
+		for (i = 0; i < lens2; i++)
+			s3[lens1 + i] = s2[i];
+	}
+	else
+	{
+		for (i = 0; i < n; i++)
+			s3[lens1 + i] = s2[i];
+	}
+
+	return (s3);
+
+
+}
