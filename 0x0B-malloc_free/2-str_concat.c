@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 		if (ci < lens1)
 			s3[ci] = s1[ci];
 
-		if (ci < lens2)
+		if (ci >= lens1)
 			s3[ci] = s2[ci];
 	}
 
