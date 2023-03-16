@@ -27,7 +27,7 @@ char *str_concat(char *s1, char *s2)
 	while(s2[c2++])
 		lens2++;
 
-	s3 = malloc(sizeof(char) * ((lens1 + lens2) + 1));
+	s3 = malloc(sizeof(char) * ((lens1 + lens2) + 3));
 
 	for (ci = 0; ci < lens1; ci++)
 	{
