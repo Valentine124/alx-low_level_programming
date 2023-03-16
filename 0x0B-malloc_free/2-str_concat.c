@@ -14,7 +14,7 @@ char *str_concat(char *s1, char *s2)
 {
 	char *s3;
 	int lens1 = 0, lens2 = 0, c1 = 0, c2 = 0;
-	int ci, cj, i = 0;
+	int ci;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -36,8 +36,6 @@ char *str_concat(char *s1, char *s2)
 
 		s3[ci] = s2[ci];
 	}
-
-	s3[(lens1 + lens2) - 1] = '\0';
 
 	return (s3);
 }
