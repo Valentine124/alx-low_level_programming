@@ -12,7 +12,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s3;
+	char *s3, *s4;
 	int lens1 = 0, lens2 = 0, c1 = 0, c2 = 0;
 	int ci;
 
@@ -38,5 +38,9 @@ char *str_concat(char *s1, char *s2)
 			s3[ci] = s2[ci];
 	}
 
-	return (s3);
+	s4 = s3;
+
+	free(s3);
+
+	return (s4);
 }
