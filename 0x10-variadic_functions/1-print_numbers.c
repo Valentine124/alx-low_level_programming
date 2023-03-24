@@ -27,12 +27,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	else
 	{
-		for (i == 0; i < n; i++)
+		for (i = 0; i < n; i++)
 		{
 			if (i == n - 1)
 				printf("%d", va_arg(ptr, int));
 			else
-				printf("%d%s ", va_arg(ptr, int));
+				printf("%d%s ", va_arg(ptr, int), separator);
 		}
 	}
 
