@@ -1,4 +1,7 @@
+#include <stddef.h>
 #include "lists.h"
+
+void print_node(const list_t *n);
 
 /**
  * print_list - print elements of a linked list
@@ -7,7 +10,7 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *temp;
+	const list_t *temp;
 	size_t n = 0;
 
 	temp = h;
@@ -31,10 +34,10 @@ size_t print_list(const list_t *h)
  */
 void print_str(char *s)
 {
-	while (*s == '\0')
+	while (*s != '\0')
 	{
 		_putchar(*s);
-		*(s + 1);
+		s++;
 	}
 }
 
@@ -42,7 +45,7 @@ void print_str(char *s)
  * print_node - print the str and len of a node
  * @n: the node
  */
-void print_node(list_t *n)
+void print_node(const list_t *n)
 {
 	if (n->str == NULL)
 	{
