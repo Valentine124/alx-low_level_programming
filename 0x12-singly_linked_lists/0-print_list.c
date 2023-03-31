@@ -1,5 +1,5 @@
 #include <stddef.h>
-#include "lists.h"
+#include "lists.h"i
 
 void print_node(const list_t *n);
 
@@ -16,7 +16,7 @@ size_t print_list(const list_t *h)
 	temp = h;
 
 	if (temp == NULL)
-		return (NULL);
+		return (0);
 
 	do {
 		print_node(temp);
