@@ -7,8 +7,10 @@
  */
 void free_list(list_t *head)
 {
-	if (head->next == NULL)
-		free(head);
+	list_t *temp = head;
+
+	if (temp->next == NULL)
+		free(temp);
 	else
-		free_list(head->next);
+		free_list(temp->next);
 }
