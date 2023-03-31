@@ -37,10 +37,10 @@ void print_node(const list_t *n)
 {
 	if (n->str == NULL)
 	{
-		printf("[%d] (nil)", n->len);
+		printf("[%d] (nil)\n", n->len);
 	}
 	else
 	{
-		printf("[%d] %s", n->len, n->str);
+		printf("[%d] %s\n", n->len, n->str);
 	}
 }
