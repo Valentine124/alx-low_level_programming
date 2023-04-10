@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+/**
+ * read_textfile - read a text file and print it.
+ * @filename: the name of the file
+ * @letters: the nubers of letters to be read
+ * Return: the number of letters read.
+ */
+ssize_t read_textfile(const char *filename, size_t letters)
+{
+	int f, i, sz;
+	char *buff, *c;
+
+	if (filename == NULL)
+		return (0);
+
+	f = open(filename, O_RDWR);
+
+	if (f == -1)
+		return (0);
+
+	buff = malloc(letters * sizeof(char));
+
+	if (buff == NULL)
+		return (0);
+
+	sz = read(f, buff, letters);
+
+	if (sz == -1)
+		return (0);
+
+	for (i = 0; (size_t)i < letters; i++)
+	{
+		c = buff + i;
+		write(STDOUT_FILENO, c, 1);
+	}
+
+	return (sz);
+
+
+}
