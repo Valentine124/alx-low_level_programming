@@ -26,7 +26,7 @@ unsigned int binary_to_unit(const char *b)
 			int p = power(2, l);
 			int n = 0;
 
-			if (b[i] == 1)
+			if (b[i] == '1')
 				n = 1;
 			else
 				n = 0;
