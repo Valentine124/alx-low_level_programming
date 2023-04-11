@@ -7,7 +7,7 @@ int power(int base, int index);
  * @b: the binary in string format
  * Return: the converted number or 0 if failed
  */
-unsigned int binary_to_unit(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int unit = 0;
 	int i, len = 0, c = 0;
