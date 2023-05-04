@@ -45,8 +45,6 @@ int power(int num, int index)
 {
 	if (index == 0)
 		return (1);
-	else if (index == 1)
-		return (num);
 	else
 		return (num * power(num, index - 1));
 }
