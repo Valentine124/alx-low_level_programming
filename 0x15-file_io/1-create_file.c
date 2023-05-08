@@ -20,12 +20,12 @@ int create_file(const char *filename, char *text_content)
 		while (text_content[c++])
 			len++;
 
-		fd = open(filename, O_WRONLY | O_TRUNC, 0600);
+		fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 		w = write(fd, text_content, len);
 	}
 	else
 	{
-		fd = open(filename, O_WRONLY | O_TRUNC, 0600);
+		fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 		w = write(fd, text_content, len);
 	}
 
