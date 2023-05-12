@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 {
 	int fd_from, fd_to, r_from, w_to;
 	char *buff = malloc(sizeof(char) * 1024);
-	int total_r_from = 0;
 	ssize_t size = 1024;
 
 	if (argc != 3 || buff == NULL)
@@ -25,23 +24,11 @@ int main(int argc, char **argv)
 	fd_from = open(argv[1], O_RDONLY);
 	r_from = read(fd_from, buff, size);
 
-	while (r_from != 0)
-	{
-		total_r_from += r_from;
-		
-		if (total_r_from >= size)
-		{
-			buff = realloc(buff, 10);
-		}
-
-		r_from = read(fd_from, buff + total_r_from, size);
-
-		if (r_from == -1)
-			err_msg("Error: Can't read from %s\n", 98, argv[1]);
-	}
+	if (fd_from == -1 || r_from == -1)
+		err_msg("Error: Can't read from %s\n", 98, argv[1]);
 
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w_to = write(fd_to, buff, total_r_from);
+	w_to = write(fd_to, buff, r_from);
 
 	if (fd_to == -1 || w_to == -1)
 		err_msg("Error: Can't write to %s\n", 99, argv[2]);
