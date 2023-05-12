@@ -12,25 +12,29 @@ void err_msg(char *msg, int status, char *av);
 int main(int argc, char **argv)
 {
 	int fd_from, fd_to, r_from, w_to;
-	char buff[1024];
+	char *buff = malloc(sizeof(char) * 1024);
 	int total_r_from = 0;
+	ssize_t size = 1024;
 
-	if (argc != 3)
+	if (argc != 3 || buff == NULL)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
 	fd_from = open(argv[1], O_RDONLY);
-	r_from = read(fd_from, buff, 1024);
-
-	if (fd_from == -1 || r_from == -1)
-		err_msg("Error: Can't read from %s\n", 98, argv[1]);
+	r_from = read(fd_from, buff, size);
 
 	while (r_from != 0)
 	{
 		total_r_from += r_from;
-		r_from = read(fd_from, buff + total_r_from, 1024);
+		
+		if (total_r_from >= size)
+		{
+			buff = realloc(buff, 10);
+		}
+
+		r_from = read(fd_from, buff + total_r_from, size);
 
 		if (r_from == -1)
 			err_msg("Error: Can't read from %s\n", 98, argv[1]);
@@ -52,9 +56,8 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
-
+	free(buff);
 	return (0);
-
 }
 
 /**
