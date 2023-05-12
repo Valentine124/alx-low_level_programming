@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 {
 	int fd_from, fd_to, r_from, w_to;
 	char buff[1024];
+	int total_r_from = 0;
 
 	if (argc != 3)
 	{
@@ -26,8 +27,17 @@ int main(int argc, char **argv)
 	if (fd_from == -1 || r_from == -1)
 		err_msg("Error: Can't read from %s\n", 98, argv[1]);
 
+	while (r_from != 0)
+	{
+		total_r_from += r_from;
+		r_from = read(fd_from, buff + total_r_from, 1024);
+
+		if (r_from == -1)
+			err_msg("Error: Can't read from %s\n", 98, argv[1]);
+	}
+
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	w_to = write(fd_to, buff, r_from);
+	w_to = write(fd_to, buff, total_r_from);
 
 	if (fd_to == -1 || w_to == -1)
 		err_msg("Error: Can't write to %s\n", 99, argv[2]);
