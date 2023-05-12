@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	r_from = read(fd_from, buff, size);
 
 	if (fd_from == -1 || r_from == -1)
-		err_msg("Error: Can't read from %s\n", 98, argv[1]);
+		err_msg("Error: Can't read from file %s\n", 98, argv[1]);
 
 	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	w_to = write(fd_to, buff, r_from);
