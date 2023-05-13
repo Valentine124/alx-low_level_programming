@@ -31,11 +31,11 @@ int main(int argc, char **argv)
 	w_to = write(fd_to, buff, r_from);
 
 	if (fd_to == -1 || w_to == -1)
-		err_msg("Error: Can't write to %s\n", 99, argv[2]);
+		err_msg("Error: Can't write to file %s\n", 99, argv[2]);
 
 	if (close(fd_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Erro: Can't close fd \n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd \n");
 		exit(100);
 	}
 	else if (close(fd_to) == -1)
