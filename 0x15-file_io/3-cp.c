@@ -35,12 +35,12 @@ int main(int argc, char **argv)
 
 	if (close(fd_from) == -1)
 	{
-		dprintf(STDERR_FILENO, "Erro: Can't close fd %d\n", fd_from);
+		dprintf(STDERR_FILENO, "Erro: Can't close fd \n");
 		exit(100);
 	}
 	else if (close(fd_to) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd \n");
 		exit(100);
 	}
 	free(buff);
