@@ -35,7 +35,7 @@ void print_times_table(int n)
  */
 void format(int mul, int next, int j, int n)
 {
-	if (mul < 9)
+	if (mul <= 9)
 	{
 		_putchar(mul + '0');
 	}
