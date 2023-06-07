@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_triangle - draw a triangle
  * @size: size of the triangle
