@@ -7,7 +7,8 @@
  */
 int _atoi(char *s)
 {
-	long int c, n, num = 0, sign = 1;
+	int c, n, sign = 1;
+	unsigned int num = 0;
 
 	if (s == NULL)
 		return (num);
