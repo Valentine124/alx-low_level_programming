@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int c, n, num = 0, sign = 1;
+	long int c, n, num = 0, sign = 1;
 
 	if (s == NULL)
 		return (num);
@@ -22,7 +22,7 @@ int _atoi(char *s)
 		{
 			if (s[c] >= '0' && s[c] <= '9')
 			{
-				for (n = 0; n < 9; n++)
+				for (n = 0; n <= 9; n++)
 				{
 					if ('0' + n == s[c])
 					{
