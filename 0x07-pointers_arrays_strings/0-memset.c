@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * @s: pointers are memory area
- * @n: the number of bytes
- * @b: constant byte
- *
- * Return: a pointer
+ * _memset - copy constant to nth location of s
+ * @s: the buff
+ * @b: the constant
+ * @n: the nuber of constant to add
+ * Return: buff 's'
  */
-char *-memst(char *s, char b unsiggnrd int)
+char _memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
