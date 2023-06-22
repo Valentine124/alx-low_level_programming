@@ -21,7 +21,7 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 
-		if (accpt[j] == '\0')
+		if (accept[j] == '\0')
 			return (len);
 	}
 
