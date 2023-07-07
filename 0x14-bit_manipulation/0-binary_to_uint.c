@@ -8,7 +8,7 @@
  */
 unsigned int binary_touint(const char *b)
 {
-	unsigned int i, dec = 0, len = 0;
+	unsigned int i = 0, dec = 0, len = 0;
 
 	while (b[i++])
 		len += 1;
