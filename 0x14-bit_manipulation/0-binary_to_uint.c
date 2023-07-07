@@ -6,7 +6,7 @@
  *
  * Return: the converted number or 0 if failed
  */
-unsigned int binary_touint(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i = 0, dec = 0, len = 0;
 
