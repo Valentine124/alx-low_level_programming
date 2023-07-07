@@ -18,17 +18,19 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = 0; b[i]; i++)
 	{
+		if (b[i] != '1' && b[i] != '0')
+			return (0);
+
 		if (b[i] == '1')
 		{
 			dec += 1 * (1 << (len - (i + 1)));
+			continue;
 		}
-		else if (b[i] == '0')
+		
+		if (b[i] == '0')
 		{
 			dec += 0 * (1 << (len - (i + 1)));
-		}
-		else
-		{
-			return (0);
+			continue;
 		}
 	}
 
