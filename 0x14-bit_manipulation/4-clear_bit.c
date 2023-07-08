@@ -7,7 +7,7 @@
  *
  * Return: 1 if worked or -1 if failed
  */
-int clear_bit(unsigned long int *n, unsigned in index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int i;
 
