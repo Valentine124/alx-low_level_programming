@@ -10,11 +10,11 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i, c = 0, dec = 0, len = 0;
 
-	while (b[c++])
-		len += 1;
-
 	if (b == NULL)
 		return (0);
+
+	while (b[c++])
+		len += 1;
 
 	for (i = 0; b[i]; i++)
 	{
