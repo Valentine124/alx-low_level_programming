@@ -23,4 +23,6 @@ int get_bit(unsigned long int n, unsigned int index)
 			return (mask & 1);
 		}
 	}
+
+	return (-1);
 }
