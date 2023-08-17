@@ -6,9 +6,9 @@
  *
  * Return: the number of nodes in the list
  */
-size_t print_dlidtint(const distint_t *h)
+size_t print_dlidtint(const dlistint_t *h)
 {
-	distint_t *temp;
+	const dlistint_t *temp;
 	size_t len = 0;
 
 	if (h == NULL)
