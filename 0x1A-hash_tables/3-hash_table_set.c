@@ -31,7 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->value = strdup(value);
 	new->next = NULL;
 
-	idx = key_index(key, ht->size);
+	idx = key_index((const unsigned char *)key, ht->size);
 
 	if (arr[idx] == NULL)
 	{
