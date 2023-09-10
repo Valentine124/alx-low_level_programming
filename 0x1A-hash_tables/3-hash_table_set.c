@@ -39,7 +39,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		(arr[idx])->next = new;
+		hash_node_t *last = arr[idx];
+
+		while (last->next)
+			last = last->next;
+		last->next = new;
 	}
 
 	return (1);
