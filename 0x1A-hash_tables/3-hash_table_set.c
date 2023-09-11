@@ -29,22 +29,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	new->key = strdup(key);
 	new->value = strdup(value);
-	new->next = NULL;
 
 	idx = key_index((const unsigned char *)key, ht->size);
 
-	if (arr[idx] == NULL)
+	if (!(arr[idx]))
 	{
-		arr[idx] = new;
+		new->next = NULL;
 	}
 	else
 	{
-		hash_node_t *last = arr[idx];
-
-		while (last->next)
-			last = last->next;
-		last->next = new;
+		new->next = arr[idx];
 	}
+
+	arr[idx] = new;
 
 	return (1);
 }
