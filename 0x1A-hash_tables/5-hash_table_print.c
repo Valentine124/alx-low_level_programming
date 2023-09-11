@@ -7,7 +7,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *temp, **arr;
-	unsigned long int idx, s = 0, n, = 0, i = 0;
+	unsigned long int idx, s = 0, n = 0, i = 0;
 
 	if (ht == NULL)
 		return;
@@ -37,7 +37,7 @@ void hash_table_print(const hash_table_t *ht)
 			temp = temp->next;
 		}
 
-		if (ar[idx])
+		if (arr[idx])
 			n++;
 	}
 
