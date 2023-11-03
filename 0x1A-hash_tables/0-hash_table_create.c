@@ -22,9 +22,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/* Assign NULL to all spaces in arr */
 	for (i = 0; i < size; i++)
 	{
-		arr[i].key = NULL;
-		arr[i].value = NULL;
-		arr[i].next = NULL;
+		arr[i] = NULL;
 	}
 
 	table->size = size;
