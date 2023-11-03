@@ -13,8 +13,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	unsigned long int i;
 
 	table = malloc(sizeof(*table));
+	if (table == NULL)
+		return (NULL);
 	arr = malloc(sizeof(*arr) * size);
-	if (arr == NULL || table == NULL)
+	if (arr == NULL)
 		return (NULL);
 
 	/* Assign NULL to all spaces in arr */
