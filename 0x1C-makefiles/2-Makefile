@@ -8,10 +8,10 @@ NAME := school
 all : ${OBJ} ${NAME}
 
 %.o : %.c m.h
-	gcc -c -o $@ $<
+	${CC} -c -o $@ $<
 
 ${NAME} : ${OBJ}
-	gcc ${OBJ} -o ${NAME}
+	${CC} ${OBJ} -o ${NAME}
 
 clean :
 	rm -f *.o school
