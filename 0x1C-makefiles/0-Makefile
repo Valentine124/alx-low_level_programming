@@ -1,0 +1,10 @@
+.PHONY : clean
+
+
+all : school
+
+school : $(wildcard *.c) $(wildcard *.h)
+	gcc $(wildcard *.c) -o school
+
+clean :
+	rm school
