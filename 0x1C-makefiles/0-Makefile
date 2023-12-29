@@ -3,8 +3,8 @@
 
 all : school
 
-school : $(wildcard *.c) $(wildcard *.h)
-	gcc $(wildcard *.c) -o school
+school : main.c school.c $(wildcard *.h)
+	gcc main.c school.c -o school
 
 clean :
 	rm school
