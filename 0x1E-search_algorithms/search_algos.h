@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /* Function Prototype */
 void print_array(int *arr, int first, int last);
