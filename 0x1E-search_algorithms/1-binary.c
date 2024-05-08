@@ -3,7 +3,7 @@
 /**
  * binary_search - binary search implementation
  * @array: The list to search from
- * @siz: lenght of the list
+ * @size: lenght of the list
  * @value: The value to search for
  *
  * Return: The index of value or -1
@@ -48,7 +48,7 @@ int binary_search(int *array, size_t size, int value)
  * print_array - prints the values of an array seperated by comma
  * @first: the first element of the array
  * @last: The last element of the array
- * @array: The array
+ * @arr: The array
  */
 void print_array(int *arr, int first, int last)
 {
